@@ -1,0 +1,12 @@
+add path to :
+nano .profile 
+as:
+export PATH=/home/zemoso/javaPlay/activator-dist-1.3.10/bin:$PATH
+
+then load .profile again as:
+. ~/.profile
+
+then add shortcut as :
+ chmod u+x /home/zemoso/javaPlay/activator-dist-1.3.10/bin/activator
+
+
