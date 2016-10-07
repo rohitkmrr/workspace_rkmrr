@@ -1,0 +1,34 @@
+.menu_label{
+	width:80%;
+	height:60px;
+	text-align:center;
+	font-family:'Lato';
+	padding-top:5px;
+	padding-bottom:5px;	
+}
+.menu_label:hover{
+	cursor:pointer;
+	background-color:#E8E8E8;
+}
+
+@media screen and (min-width:400px){
+	#menu_label_container{
+		left:0px;
+		display:none;
+		width:100%	
+	}
+	#ng_container{
+		left:20%;top:10px;width:60%;height:auto;position:absolute;
+	}
+}
+@media screen and (min-width:720px){
+	#menu_label_container{
+		left:0px;
+		display:block;
+		width:100%;
+	}
+	#ng_container{
+		left:30%;top:10px;width:60%;height:auto;position:absolute;
+	}
+}
+

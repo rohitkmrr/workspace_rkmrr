@@ -1,0 +1,128 @@
+@(Welcome:String)
+<!DOCTYPE html>
+<html lang="en">
+	<style>
+			#name_container{
+		z-index:100;left:0px;top:0px;width: 100%;height:65px;position: fixed;background-color: rgb(255, 187, 0);
+	}
+	</style>
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- jQuery-->
+<script src="assets/internals/jQuery.js"></script> 
+<link rel="stylesheet" href="assets/internals/jquery-ui.css">			
+<script src="assets/internals/jquery-ui.js"></script>  
+			  
+			  
+			  
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="assets/internals/bootstrap4.min.css" >
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="assets/internals/bootstrap4.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/Oswald.css" type="text/css"/>
+
+  
+  <!-- Notify.js Files -->
+  <script src="assets/internals/notify.min.js"></script>
+  <link rel="stylesheet" href="assets/internals/notify-metro.min.css" type="text/css"/>
+  <script src="assets/internals/notify-metro.min.js"></script>
+
+<!-- Angular JS&routes -->
+<script src="assets/internals/angular.min.js"></script>
+<script type="text/javascript" src="assets/internals/angular-route.min.js"></script>
+
+<!-- Font awesome script -->
+<script src="assets/internals/font-awesome-025cac6ad7.js"></script>
+  
+  
+  <title>@Welcome</title>
+  <meta name="description" content="">
+  <meta name="author" content="zemoso">
+
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+  <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+
+<body>
+  <div style="left:0px;top:0px;width: 100%;height: auto;position: absolute">
+  	<div id="name_container">
+  			<div style="left:0px;top:0px;left:0px;width:auto;position: absolute">
+  				<div style="margin-left:5%;margin-top:15px">
+  					<div style="margin-top:0px">
+  						<span style="font-family: 'Oswald', sans-serif;font-size: 25px;color:black;margin-left:10px">ZeMoSo</span>	
+  					</div>
+  				</div>  		
+  			</div>
+	  	</div>
+  	<div style="left:0px;top:90px;width: 100%;height:auto">
+  		<div style="left:0px;width:100%;top:90px;position:absolute;height: 400px;" align="center">
+  			<div style="left:30%;width: 40%;top:40px;position: absolute;height: 360px;background: #F7F7F7" ng-app="formApp" ng-controller="formController">
+  				<form style="margin-top: 5%">
+  				<div class="row">
+  					<div class="col-lg-12">
+  						<div class="input-group" align="center">
+  							<input type="text" ng-model="username" required class="form-control" placeholder="Username" />
+  						</div>
+  					</div>
+  				</div>
+  				<br>
+  				<div class="row">
+  					<div class="col-lg-12">
+  						<div class="input-group" align="center">
+  							<input type="password" ng-model="password" required class="form-control"  placeholder="Password"/>
+  						</div>
+  					</div>
+  				</div>
+  				<br>
+  				<div class="row">
+  					<div class="col-lg-12">
+  						<div class="input-group" align="center">
+  							<input type="password" ng-model="confirmpassword" required class="form-control"  placeholder="Confirm Password"/>
+  						</div>
+  					</div>
+  				</div>
+  				<br>
+  				<div class="row">
+  					<div class="col-lg-12">
+  						<div class="input-group" align="center">
+  							<input type="email" ng-model="email" required class="form-control"  placeholder="Email"/>
+  						</div>
+  					</div>
+  				</div>
+  				<br>
+  				<div class="row">
+  					<div class="col-lg-12">
+  						<div class="input-group" align="center">
+  							<div align="center" id="buttonDiv" style="display: block">
+  								<button id="submitButton" class="btn" ng-click="caller()" style="background: #D6D6D6">Register</button>	
+  							</div>
+  							<div align="center" id="spinnerDiv" style="display:none">
+  								<i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+								<span class="sr-only">Loading...</span>	
+  							</div align="center" id="login" style="display:none">
+  							
+  						</div>
+  					</div>
+  				</div>
+				<div class="row">
+					<div>
+						<a href="welcome">Have an account already?</a>
+					</div>
+				</div>  				
+  			</form>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+  <script src="assets/newRegister.js"></script>
+</body>
+</html>

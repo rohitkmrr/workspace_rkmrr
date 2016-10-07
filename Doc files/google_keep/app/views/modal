@@ -1,0 +1,41 @@
+<div class="modal fade" id="genericModal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog">
+	
+		<div class="modal-content">
+		  <form action="#" method="#">
+			  <div class="modal-header">
+					<input type="text" ng-model="generic_title" class="form-control" placeholder="Title"/>
+			  </div>
+		  <div class="modal-body">
+			<textarea ng-model="generic_content" rows="7" class="form-control" placeholder="Take a note..."></textarea>
+			<span style="float:right" ng-bind="createdDate"></span>
+		  </div>
+		  
+		  <div class="modal-footer">
+			<span style="float: left;font-size: 30px">
+				<i class="fa fa-cloud-download" ng-click="archiveThisPost(postId,1)" aria-hidden="true"></i>		
+				<i class="fa fa-calendar-plus-o" onclick="reminderStateChanger();" aria-hidden="true"></i>	
+			</span>
+		
+			<button type="button" ng-click="generic_click(prev_container)" class="btn btn-primary">Done</button>
+		  </div>
+		  <div class="modal-footer" id="reminderFooter_1" style="display:none">
+			<div class="row">
+				<div class="col-sm-6">
+					<span style="float:left">Set a reminder</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<input type="text" ng-model="user_date_g"  placeholder="Pick a date" id="datepick" value="" class="form-control"/>	
+				</div>
+				<div class="col-sm-6">
+					<input type="text" ng-model="user_time_g"  placeholder="Pick a date" onclick="timepickPopUp()" id="timepick" class="form-control"/>
+				</div>
+			</div>
+		<br><button type="button" ng-click="save_reminder_local_generic()" class="btn btn-primary">Save reminder</button>
+		  </div>
+		  </form>    
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

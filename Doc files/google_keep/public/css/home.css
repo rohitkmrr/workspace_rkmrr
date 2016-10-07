@@ -1,0 +1,17 @@
+@media screen and (min-width:400px){
+	#home_input_container{
+		width:90%;left:5%;overflow:hidden
+	}
+	#home_container{
+		width:90%;top:10px;left:5%;position: absolute;
+		background:white
+	}
+}
+@media screen and (min-width:720px){
+	#home_input_container{
+		width:80%;overflow:hidden
+	}
+}
+.text-area{
+	;border:none;display:inline;height:40px
+}

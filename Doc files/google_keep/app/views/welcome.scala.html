@@ -1,0 +1,105 @@
+@(Welcome:String, Check:String)
+<!DOCTYPE html>
+<html lang="en">
+	<style>
+			#name_container{
+		z-index:100;left:0px;top:0px;width: 100%;height:65px;position: fixed;background-color: rgb(255, 187, 0);
+	}
+	</style>
+<head>
+  <meta charset="utf-8">
+<!-- jQuery-->
+<script src="assets/internals/jQuery.js"></script> 
+<link rel="stylesheet" href="assets/internals/jquery-ui.css">			
+<script src="assets/internals/jquery-ui.js"></script>  
+			  
+			  
+			  
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="assets/internals/bootstrap4.min.css" >
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="assets/internals/bootstrap4.min.js"></script>
+   <link rel="stylesheet" href="/assets/css/Oswald.css" type="text/css"/>
+
+  
+  <!-- Notify.js Files -->
+  <script src="assets/internals/notify.min.js"></script>
+  <link rel="stylesheet" href="assets/internals/notify-metro.min.css" type="text/css"/>
+  <script src="assets/internals/notify-metro.min.js"></script>
+
+<!-- Angular JS&routes -->
+<script src="assets/internals/angular.min.js"></script>
+<script type="text/javascript" src="assets/internals/angular-route.min.js"></script>
+
+<!-- Font awesome script -->
+<script src="assets/internals/font-awesome-025cac6ad7.js"></script>
+  
+  
+  <title>@Welcome</title>
+  <meta name="description" content="">
+  <meta name="author" content="zemoso">
+
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+  <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+
+<body>
+  <div style="left:0px;top:0px;width: 100%;height: auto;position: absolute">
+  	<div id="name_container">
+  			<div style="left:0px;top:0px;left:0px;width:auto;position: absolute">
+  				<div style="margin-left:5%;margin-top:15px">
+  					<div style="margin-top:0px">
+  						<span style="font-family: 'Oswald', sans-serif;font-size: 25px;color:black;margin-left:10px">ZeMoSo</span>	
+  					</div>
+  				</div>  		
+  			</div>
+	  	</div>
+  	<div style="left:0px;top:90px;width: 100%;height:auto">
+  		<div style="left:0px;width:100%;top:90px;position:absolute;height: 400px;" align="center">
+  			<div style="left:30%;width: 40%;top:40px;position: absolute;height: 250px;background: #F7F7F7">
+  				<form enctype="application/x-www-form-urlencoded" style="margin-top: 5%" action="@routes.HomeController.login" method="post" >
+  				<div class="row">
+  					<div class="col-lg-12">
+  						<div class="input-group" align="center">
+  							<input type="text" class="form-control" name="username" placeholder="Username" />
+  						</div>
+  					</div>
+  				</div>
+  				<br>
+  				<div class="row">
+  					<div class="col-lg-12">
+  						<div class="input-group" align="center">
+  							<input type="password" class="form-control" name="password" placeholder="Password"/>
+  						</div>
+  					</div>
+  				</div>
+  				<br>
+  				<div class="row">
+  					<div class="col-lg-12">
+  						<div class="input-group" align="center">
+  							<input class="btn" type="submit" style="background: #D6D6D6" value="Login">
+  						</div>
+  					</div>
+  				</div>
+  				<p><a href="register">Not yet registered?</a></p>
+  			</form>
+  			</div>
+  			@if(Check=="x"){
+  			<div style="left:30%;width: 40%;top:250px;position: absolute;">
+  				<div class="alert alert-danger"  role="alert" style="font-family:Montserrat">
+				  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				  <span class="sr-only">Error:</span>
+				  	Are you sure about the username and password? <a>Yes</a>, <a href="">No!</a>
+				</div> 				
+  			</div>	
+  			}
+  		</div>
+  	</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.welcome
+GET		/welcome					controllers.HomeController.welcome
+POST	/addUser					controllers.HomeController.addUser
+POST	/login						controllers.HomeController.login
+GET		/register					controllers.HomeController.newRegister
+GET 	/trial						controllers.HomeController.trial
+POST 	/jwt						controllers.HomeController.jwt
+GET		/main						controllers.HomeController.main
+POST	/addPost					controllers.HomeController.addPost
+
+GET		/getAllPosts				controllers.HomeController.getAllPosts
+
+
+GET		/getPost					controllers.HomeController.getPost
+POST	/archivePostById			controllers.HomeController.archivePostById
+
+GET		/home						controllers.HomeController.homePage
+GET		/archive					controllers.HomeController.archivePage
+GET		/getReminders				controllers.HomeController.getReminders
+GET		/setReminder				controllers.HomeController.setReminder
+POST	/updateReminder				controllers.HomeController.updateReminder
+POST	/updatePost					controllers.HomeController.updatePost
+GET		/logout						controllers.HomeController.logout
+POST	/removeReminder				controllers.HomeController.removeReminder	
+
+
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

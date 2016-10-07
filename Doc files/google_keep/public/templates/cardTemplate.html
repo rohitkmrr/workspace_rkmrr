@@ -1,0 +1,49 @@
+<div class="card card-block light-shadow"  id="card_{{c.postId}}">
+	  					<div ng-click="popUpDiv(c)" style="min-height:20px;min-width: 20px;max-width:300px;word-wrap:break-word">
+	  						<h6 class="card-title">{{c.title.length>30? (c.title|limitTo:60):(c.title)}}<span ng-if="c.title.length>60">....</span></h4>
+					  		<p class="card-text"  ng-class="{largeText: c.content.length<10, smallText: c.content.length<20}">{{c.content.length>200? (c.content | limitTo:200):(c.content)}}<span ng-if="c.content.length>200">....</span></p>	
+	  					</div>
+						<div align="left">
+							  <div class="btn-group" style="margin-left:0%;position:absolute">
+							  	<div id="{{c.postId}}" onclick="pop_up_card_reminder_setter(this.id)" >
+	  										<svg class="gb_9b home_input_icon" type="button" width="15px" xmlns="http://www.w3.org/2000/svg" fill="#D1D1D1" viewBox="0 0 24 24" height="24px"><path d="m0 0h24v24h-24z" fill="none"></path><path d="m20.78 13.16l-6.05-3.02c-0.23-0.09-0.47-0.14-0.73-0.14h-1v-2h1.75c1.66 0 3-1.34 3-3s-1.34-3-3-3c-0.75 0-1.14 0.22-1.75 0.75v-0.75c0-1.1-0.9-2-2-2s-2 0.9-2 2v0.75c-0.61-0.53-1-0.75-1.75-0.75-1.66 0-3 1.34-3 3s1.34 3 3 3h1.75v8.31l-4.57-0.95c-0.1-0.02-0.21-0.03-0.32-0.03-0.41 0-0.79 0.17-1.06 0.44l-1.05 1.06 6.59 6.59c0.36 0.36 0.86 0.58 1.41 0.58h9.06c1 0 1.77-0.74 1.92-1.7l1-7.03c0.01-0.09 0.02-0.18 0.02-0.27 0-0.83-0.5-1.54-1.22-1.84zm-11.53-6.16h-2c-1.1 0-2-0.9-2-2s0.9-2 2-2 2 0.9 2 2v2zm3.5-2c0-1.1 0.9-2 2-2s2 0.9 2 2-0.9 2-2 2h-2v-2z"></path></svg>
+								</div>
+								  <div class="dropdown-menu" align="center" id="dropdown-menu-for-{{c.postId}}">
+								  	<div class="row" style="width:80%;margin-left:10%">
+								  		<div class="col sm-6">
+								  			<label>Date</label>
+								  			<input type="text" id="rem_date_{{c.postId}}" onclick="popUpDate(this.id);" class="form-control rem_date"/>	
+								  		</div>
+								  	</div>
+								  	<div class="row" style="width:80%;margin-left:10%">
+								  		<div class="col sm-6">
+								  			<label>Time</label>
+								  			<input type="text" id="rem_time_{{c.postId}}" onclick="popUpTime(this.id);" class="form-control"/>	
+								  		</div>
+								  	</div>
+								    <div class="dropdown-divider"></div>
+								    	<div class="row" style="width:80%;margin-left:10%">
+									  		<div class="col sm-6">
+									  			<input class="btn btn-primary form-control" type="submit" ng-click="updateReminder(c)" value="Save"/>	
+									  		</div>
+									  	</div>
+								    	
+								  </div>
+							</div>
+							<div style="margin-left:10%">
+								<div ng-click="archiveThisPost(c.postId,1)">
+	  							<svg class="gb_9b home_input_icon" width="18px" xmlns="http://www.w3.org/2000/svg" fill="#D1D1D1"  viewBox="0 0 24 24" height="24px">
+	  								<path d="m20.54 5.23l-1.39-1.68c-0.27-0.34-0.68-0.55-1.15-0.55h-12c-0.47 0-0.88 0.21-1.16 0.55l-1.38 1.68c-0.29 0.34-0.46 0.79-0.46 1.27v12.5c0 1.1 0.9 2 2 2h14c1.1 0 2-0.9 2-2v-12.5c0-0.48-0.17-0.93-0.46-1.27zm-8.54 12.27l-5.5-5.5h3.5v-2h4v2h3.5l-5.5 5.5zm-6.88-12.5l0.81-1h12l0.94 1h-13.75z"></path><path d="m0 0h24v24h-24z" fill="none"></path>
+	  							</svg>		
+  							</div>
+							</div>
+						</div>
+						<div ng-if="c.reminder!==''&&c.reminder!=='null'">
+								<div style="border-top:solid 1px black;font-size:9px" >
+									<div class="reminder-div" id="foot_of_card_{{c.postId}}"  ng-class='{viewed: c.isReminderActive===1, nviewed: c.isReminderActive===-1}'>{{c.reminder | date:"medium"}} </div>	
+									<i class="fa fa-trash" ng-click="removeReminder(c.postId)" style="font-size:15px;margin-left:20%;float:right" aria-hidden="true"></i>
+								</div>
+								
+								
+						</div>
+					</div>

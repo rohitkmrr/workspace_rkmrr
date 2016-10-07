@@ -1,0 +1,405 @@
+<div style="left:0%;width:auto" align="center" id="home_input">
+			<div id="home_input_container">
+				<div class="row">
+  					<div class="col-sm-12">
+  						<textarea id="home_input_title" ng-model="generic_title" style="display:none;border:none" class="form-control" placeholder="Title"></textarea>
+  					</div>
+  				</div>
+  				<div class="row">
+  					<div class="col-sm-12">
+  						<textarea id="home_input_text" ng-model="generic_content" class="text-area  form-control" placeholder="Take a note..."  style="border:none" aria-describedby="basic-addon2"></textarea>	
+  					</div>
+  				</div>
+  				<div class="row" id="home_input_footer" style="display:none;width:100%">
+  					<div class="col-sm-12" style="background:white;padding-bottom:10px">
+  						<div style="float:left;padding-left:0px;">
+	  							<div style="float:left;">
+	  								<div class="btn-group">
+	  									<div id="reminder_container_div">
+	  										<svg class="gb_9b home_input_icon" type="button" width="18px" xmlns="http://www.w3.org/2000/svg" fill="#D1D1D1" viewBox="0 0 24 24" height="24px"><path d="m0 0h24v24h-24z" fill="none"></path><path d="m20.78 13.16l-6.05-3.02c-0.23-0.09-0.47-0.14-0.73-0.14h-1v-2h1.75c1.66 0 3-1.34 3-3s-1.34-3-3-3c-0.75 0-1.14 0.22-1.75 0.75v-0.75c0-1.1-0.9-2-2-2s-2 0.9-2 2v0.75c-0.61-0.53-1-0.75-1.75-0.75-1.66 0-3 1.34-3 3s1.34 3 3 3h1.75v8.31l-4.57-0.95c-0.1-0.02-0.21-0.03-0.32-0.03-0.41 0-0.79 0.17-1.06 0.44l-1.05 1.06 6.59 6.59c0.36 0.36 0.86 0.58 1.41 0.58h9.06c1 0 1.77-0.74 1.92-1.7l1-7.03c0.01-0.09 0.02-0.18 0.02-0.27 0-0.83-0.5-1.54-1.22-1.84zm-11.53-6.16h-2c-1.1 0-2-0.9-2-2s0.9-2 2-2 2 0.9 2 2v2zm3.5-2c0-1.1 0.9-2 2-2s2 0.9 2 2-0.9 2-2 2h-2v-2z"></path></svg>
+	  									</div>
+	  								
+								  <ul class="dropdown-menu" id="drop_down_menu" style="font-family:'Lato';font-size:12px;width:200px">
+											     	<li>
+											     		<div class="row">
+											     			<div class="col-sm-12" style="margin-left:5px;margin-right:5px;">
+											     				<p>Reminder:</p>
+											     				<span>Date and time</span>
+											     			</div>
+											     		</div>
+													</li>
+													<li>
+											     		<div class="row"  style="padding-top:3px;padding-bottom:3px">
+											     			<div class="col-sm-12">
+											     				<div style="margin-left:5px;margin-right:5px;">
+											     					<p>
+											     						<span>Date</span>
+											     						<input type="text" id="home_input_reminder_date" ng-model="user_date_g" onclick="popUpDate(this.id);" class="form-control" />
+											     					</p>
+											     				</div>
+											     			</div>
+											     		</div>
+													</li>
+													<li>
+											     		<div class="row"  style="padding-top:3px;padding-bottom:3px">
+											     			<div class="col-sm-12">
+											     				<div style="margin-left:5px;margin-right:5px;">
+											     					<p>
+											     						<span>Time</span>
+											     						<input type="text" id="home_input_reminder_time" ng-model="user_time_g" onclick="popUpTime(this.id);" class="form-control" />
+											     					</p>
+											     				</div>
+											     			</div>
+											     		</div>
+													</li>
+													<li>
+											     		<div class="row"  style="padding-top:3px;padding-bottom:3px">
+											     			<div class="col-sm-12">
+											     				<div style="margin-left:5px;margin-right:5px;text-align:center">
+											     					<button type="submit" class="btn btn-primary" style="margin:none" ng-click="save_reminder_local_generic();">Save Reminder</button>
+											     				</div>
+											     			</div>
+											     		</div>
+													</li>
+											    </ul>
+							</div>
+  								</div>
+  							<div style="float:left;margin-left:10px">
+  								<div ng-click="archiveThisPost('',1)">
+  									<svg class="gb_9b home_input_icon" width="18px" xmlns="http://www.w3.org/2000/svg" fill="#D1D1D1"  viewBox="0 0 24 24" height="24px">
+  										<path d="m20.54 5.23l-1.39-1.68c-0.27-0.34-0.68-0.55-1.15-0.55h-12c-0.47 0-0.88 0.21-1.16 0.55l-1.38 1.68c-0.29 0.34-0.46 0.79-0.46 1.27v12.5c0 1.1 0.9 2 2 2h14c1.1 0 2-0.9 2-2v-12.5c0-0.48-0.17-0.93-0.46-1.27zm-8.54 12.27l-5.5-5.5h3.5v-2h4v2h3.5l-5.5 5.5zm-6.88-12.5l0.81-1h12l0.94 1h-13.75z"></path><path d="m0 0h24v24h-24z" fill="none"></path>
+  									</svg>
+  								</div>
+  							</div>	
+  						</div>  								
+  						<input type="submit" value="Done" id="home_input_submit" ng-click="generic_click('postId')" style="border-radius:5px;border:none;float:right;background-color:white">
+  					</div>
+  				</div>
+  				<div class="row" id="home_input_reminder_row" style="width:100%;background:white;font-size:10px;height:20px;display:none;padding:5px;border-top:dashed 1px #EBEBEB;color:#696969">
+  					<div class="col-sm-6"  id="home_input_reminder_container">
+  						<p style="float:left" id="home_input_reminder"></p>
+  					</div>
+  					<div class="col-sm-6" align="right">
+  						<i class="fa fa-trash" id="home_input_reminder_remover" style="font-size:15px;margin-left:20%;float:right" aria-hidden="true"></i>
+  					</div>
+  				</div>
+			</div>
+			<div id="two" style="width:100%;left:0%;margin-top:2%;height:auto">
+				<div class="row" style="margin-top:0%;left:0%;width:auto;position: absolute">
+  				<div class="col-xs-6 col-md-4" ng-repeat="c in contents" style="font-family: font-family: 'PT Sans', sans-serif;">
+	  				<div class="card card-block light-shadow"  id="card_{{c.postId}}" onmouseover="addShadow(this.id)" onmouseleave="undoShadow(this.id)">
+	  					<div ng-click="popUpDiv(c)" style="min-height:20px;min-width: 20px;max-width:300px;word-wrap:break-word">
+	  						<h6 class="card-title">{{c.title.length>30? (c.title|limitTo:60):(c.title)}}<span ng-if="c.title.length>60">....</span></h4>
+					  		<p class="card-text"  ng-class="{largeText: c.content.length<10, smallText: c.content.length<20}">{{c.content.length>200? (c.content | limitTo:200):(c.content)}}<span ng-if="c.content.length>200">....</span></p>	
+	  					</div>
+						<div align="left">
+							  <div class="btn-group" style="margin-left:0%;position:absolute">
+							  	<div id="{{c.postId}}" onclick="pop_up_card_reminder_setter(this.id)" >
+	  										<svg class="gb_9b home_input_icon" type="button" width="15px" xmlns="http://www.w3.org/2000/svg" fill="#D1D1D1" viewBox="0 0 24 24" height="24px"><path d="m0 0h24v24h-24z" fill="none"></path><path d="m20.78 13.16l-6.05-3.02c-0.23-0.09-0.47-0.14-0.73-0.14h-1v-2h1.75c1.66 0 3-1.34 3-3s-1.34-3-3-3c-0.75 0-1.14 0.22-1.75 0.75v-0.75c0-1.1-0.9-2-2-2s-2 0.9-2 2v0.75c-0.61-0.53-1-0.75-1.75-0.75-1.66 0-3 1.34-3 3s1.34 3 3 3h1.75v8.31l-4.57-0.95c-0.1-0.02-0.21-0.03-0.32-0.03-0.41 0-0.79 0.17-1.06 0.44l-1.05 1.06 6.59 6.59c0.36 0.36 0.86 0.58 1.41 0.58h9.06c1 0 1.77-0.74 1.92-1.7l1-7.03c0.01-0.09 0.02-0.18 0.02-0.27 0-0.83-0.5-1.54-1.22-1.84zm-11.53-6.16h-2c-1.1 0-2-0.9-2-2s0.9-2 2-2 2 0.9 2 2v2zm3.5-2c0-1.1 0.9-2 2-2s2 0.9 2 2-0.9 2-2 2h-2v-2z"></path></svg>
+								</div>
+								  <div class="dropdown-menu" align="center" id="dropdown-menu-for-{{c.postId}}">
+								  	<div class="row" style="width:80%;margin-left:10%">
+								  		<div class="col sm-6">
+								  			<label>Date</label>
+								  			<input type="text" id="rem_date_{{c.postId}}" onclick="popUpDate(this.id);" class="form-control rem_date"/>	
+								  		</div>
+								  	</div>
+								  	<div class="row" style="width:80%;margin-left:10%">
+								  		<div class="col sm-6">
+								  			<label>Time</label>
+								  			<input type="text" id="rem_time_{{c.postId}}" onclick="popUpTime(this.id);" class="form-control"/>	
+								  		</div>
+								  	</div>
+								    <div class="dropdown-divider"></div>
+								    	<div class="row" style="width:80%;margin-left:10%">
+									  		<div class="col sm-6">
+									  			<input class="btn btn-primary form-control" type="submit" ng-click="updateReminder(c)" value="Save"/>	
+									  		</div>
+									  	</div>
+								    	
+								  </div>
+							</div>
+							<div style="margin-left:10%">
+								<div ng-click="archiveThisPost(c.postId,1)">
+	  							<svg class="gb_9b home_input_icon" width="18px" xmlns="http://www.w3.org/2000/svg" fill="#D1D1D1"  viewBox="0 0 24 24" height="24px">
+	  								<path d="m20.54 5.23l-1.39-1.68c-0.27-0.34-0.68-0.55-1.15-0.55h-12c-0.47 0-0.88 0.21-1.16 0.55l-1.38 1.68c-0.29 0.34-0.46 0.79-0.46 1.27v12.5c0 1.1 0.9 2 2 2h14c1.1 0 2-0.9 2-2v-12.5c0-0.48-0.17-0.93-0.46-1.27zm-8.54 12.27l-5.5-5.5h3.5v-2h4v2h3.5l-5.5 5.5zm-6.88-12.5l0.81-1h12l0.94 1h-13.75z"></path><path d="m0 0h24v24h-24z" fill="none"></path>
+	  							</svg>		
+  							</div>
+							</div>
+						</div>
+						<div ng-if="c.reminder!==''&&c.reminder!=='null'">
+								<div style="border-top:solid 1px black;font-size:9px" >
+									<div class="reminder-div" id="foot_of_card_{{c.postId}}"  ng-class='{viewed: c.isReminderActive===1, nviewed: c.isReminderActive===-1}'>{{c.reminder | date:"medium"}} </div>	
+									<i class="fa fa-trash" ng-click="removeReminder(c.postId)" style="font-size:15px;margin-left:20%;float:right" aria-hidden="true"></i>
+								</div>
+								
+								
+						</div>
+					</div>
+  				</div>	
+  			</div>
+			</div>
+</div>
+
+<div class="container">
+<!-- Modal -->
+  <div class="modal" style="top:50px;" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="border:none;border-radius:0px">
+        <div class="modal-header" style="border:none;padding:0px">
+          <textarea class="form-control" id="modal_input_title" ng-model="modal_title" placeholder="Title" style="border:none;resize:none"></textarea>
+        </div>
+        <div class="modal-body" style="border:none;padding:0px">
+          <div class="row">
+          	<div class="col-sm-12">
+          		<textarea class="form-control" id="modal_input_text" ng-model="modal_text" placeholder="Note" style="border:none;resize:none"></textarea>	
+          	</div>
+          		
+          </div>
+          <div class="row"><div class="col-sm-12"></div></div>
+          <div class="row">
+          	<div class="col-sm-8"></div>
+          	<div class="col-sm-4" align="right" style="font-style:italic;font-size:14px;right:5px">Edited <span ng-bind="createdDate | date: 'MM/dd/yyyy'"></span></div>
+          </div>
+        </div>
+        <div class="modal-footer" style="border:none">
+        	<div class="row">
+        		<div align="left" class="col-sm-6">
+        			 <div class="btn-group" style="margin-left:0%;position:absolute">
+	  									<div id="modal_reminder_container">
+	  										<svg class="gb_9b home_input_icon" type="button" width="18px" xmlns="http://www.w3.org/2000/svg" fill="#D1D1D1" viewBox="0 0 24 24" height="24px"><path d="m0 0h24v24h-24z" fill="none"></path><path d="m20.78 13.16l-6.05-3.02c-0.23-0.09-0.47-0.14-0.73-0.14h-1v-2h1.75c1.66 0 3-1.34 3-3s-1.34-3-3-3c-0.75 0-1.14 0.22-1.75 0.75v-0.75c0-1.1-0.9-2-2-2s-2 0.9-2 2v0.75c-0.61-0.53-1-0.75-1.75-0.75-1.66 0-3 1.34-3 3s1.34 3 3 3h1.75v8.31l-4.57-0.95c-0.1-0.02-0.21-0.03-0.32-0.03-0.41 0-0.79 0.17-1.06 0.44l-1.05 1.06 6.59 6.59c0.36 0.36 0.86 0.58 1.41 0.58h9.06c1 0 1.77-0.74 1.92-1.7l1-7.03c0.01-0.09 0.02-0.18 0.02-0.27 0-0.83-0.5-1.54-1.22-1.84zm-11.53-6.16h-2c-1.1 0-2-0.9-2-2s0.9-2 2-2 2 0.9 2 2v2zm3.5-2c0-1.1 0.9-2 2-2s2 0.9 2 2-0.9 2-2 2h-2v-2z"></path></svg>
+	  									</div>
+	  								
+								  <ul class="dropdown-menu" id="drop_down_menu_modal" style="font-family:'Lato';font-size:12px;width:200px">
+											     	<li>
+											     		<div class="row">
+											     			<div class="col-sm-12" style="margin-left:5px;margin-right:5px;">
+											     				<p>Reminder:</p>
+											     				<span>Date and time</span>
+											     			</div>
+											     		</div>
+													</li>
+													<li>
+											     		<div class="row"  style="padding-top:3px;padding-bottom:3px">
+											     			<div class="col-sm-12">
+											     				<div style="margin-left:5px;margin-right:5px;">
+											     					<p>
+											     						<span>Date</span>
+											     						<input type="text" id="modal_reminder_date" ng-model="user_date_g" onclick="popUpDate(this.id);" class="form-control" />
+											     					</p>
+											     				</div>
+											     			</div>
+											     		</div>
+													</li>
+													<li>
+											     		<div class="row"  style="padding-top:3px;padding-bottom:3px">
+											     			<div class="col-sm-12">
+											     				<div style="margin-left:5px;margin-right:5px;">
+											     					<p>
+											     						<span>Time</span>
+											     						<input type="text" id="modal_reminder_time" ng-model="user_time_g" onclick="popUpTime(this.id);" class="form-control" />
+											     					</p>
+											     				</div>
+											     			</div>
+											     		</div>
+													</li>
+													<li>
+											     		<div class="row"  style="padding-top:3px;padding-bottom:3px">
+											     			<div class="col-sm-12">
+											     				<div style="margin-left:5px;margin-right:5px;text-align:center">
+											     					<button type="submit" class="btn btn-primary" style="margin:none" ng-click="save_reminder_local_generic();">Save Reminder</button>
+											     				</div>
+											     			</div>
+											     		</div>
+													</li>
+											    </ul>
+							</div>
+							<div style="margin-left:10%">
+							<div>
+								<svg class="gb_9b home_input_icon" width="18px" xmlns="http://www.w3.org/2000/svg" fill="#D1D1D1" ng-click="archiveThisModal(postId,1)"  viewBox="0 0 24 24" height="24px">
+									<path d="m20.54 5.23l-1.39-1.68c-0.27-0.34-0.68-0.55-1.15-0.55h-12c-0.47 0-0.88 0.21-1.16 0.55l-1.38 1.68c-0.29 0.34-0.46 0.79-0.46 1.27v12.5c0 1.1 0.9 2 2 2h14c1.1 0 2-0.9 2-2v-12.5c0-0.48-0.17-0.93-0.46-1.27zm-8.54 12.27l-5.5-5.5h3.5v-2h4v2h3.5l-5.5 5.5zm-6.88-12.5l0.81-1h12l0.94 1h-13.75z"></path><path d="m0 0h24v24h-24z" fill="none"></path>
+								</svg>			
+							</div>
+							</div>
+        			
+        		</div>
+        		<div class="col-sm-6" align="right">
+        			<button type="button" class="btn btn-default" id="modal_input_submit" ng-click="modal_submit(prev_container)" style="border:none;font-size:10px" data-dismiss="modal">DONE</button>
+        		</div>
+        	</div>
+          <div class="row">
+          	<div class="col-sm-12" align="left">
+          		<span ng-bind="modal_date" id="modal_reminder_display"></span>
+          	</div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+  		
+<script type="application/javascript">
+$('textarea').autogrow({onInitialize: true});
+$("#menu-fa-bars-circle").css("color","#ffbb00");
+$(function(){
+	$("#datepick").datepicker({
+		minDate:new Date()
+	});
+	$(".col-md-4:nth-child(2n)").after("<div class='clearfix visible-xs'></div>")
+	$('#home_input_text').css('height','40px');
+	
+});	
+function timepickPopUp(){
+	$("#timepick").timepicker();	
+}
+
+$("#home_input_submit").on('mouseover',function(){
+	$("#home_input_submit_container").css("background","#EBEBEB");
+	$("#home_input_submit").css("background","#EBEBEB");
+});
+$("#home_input_submit").on('mouseout',function(){
+	$("#home_input_submit_container").css("background","white");
+	$("#home_input_submit").css("background","white");
+});
+$(document).on('click',function(e){
+	var home_input_container=$("#home_input_container");
+	if(!home_input_container.is(e.target)&&home_input_container.has(e.target).length===0){
+		$("#home_input_title").css("display","none");
+		$("#home_input_footer").css("display","none");
+		$('#home_input_text').css('height','40px');
+	}
+	else{
+		if(!$("#home_input_submit").is(e.target)){
+			var home_input_text=$("#home_input_text").outerHeight();
+			$("#home_input_title").css("height","40px")
+			$("#home_input_title").css("display","block");
+			$("#home_input_footer").css("display","block");	
+		}
+	}
+});
+$("#home_input_submit").on('click',function(){
+	$("#home_input_title").css("display","none");
+		$("#home_input_footer").css("display","none");
+		$('#home_input_text').css('height','40px');
+		$("#home_input_reminder").html("");
+		$("#home_input_reminder_row").css("display","none");
+});
+$("#home_input_text").keypress(function(){
+		var home_input_text=$("#home_input_text").outerHeight();
+		$("#data_container").css("top","100px");
+		$("#home_input_title").css("display","block");
+		$("#home_input_footer").css("display","block");
+});
+
+$("#home_input_reminder_container").on('click',function(){
+	var y=$("#home_input_reminder").html();
+	var x=new Date(y);
+	$("#home_input_reminder_date").val(x.getMonth()+1+"/"+x.getDate()+"/"+(1900+x.getYear()));
+	$("#home_input_reminder_time").val(x.getHours()+":"+x.getMinutes());
+	$("#drop_down_menu").slideDown("fast");
+});
+$("#reminder_container_div").on('click',function(){
+	if($("#drop_down_menu").is(":visible")){
+		$("#drop_down_menu").slideUp("fast");
+		return;
+	}
+	var y=$("#home_input_reminder").html();
+	var date="";
+	var time="";
+	if(y!=""){
+		var x=new Date(y);
+		date=x.getMonth()+1+"/"+x.getDate()+"/"+(1900+x.getYear());
+		time=x.getHours()+":"+x.getMinutes();
+	}
+		
+	$("#home_input_reminder_date").val(date);
+	$("#home_input_reminder_time").val(time);
+	$("#drop_down_menu").slideDown("fast");
+});
+$("#menu-fa-bars").on('click',function(){
+		if($(window).width()>=700){
+			$("#menu-fa-bars-circle").css("color","#C79200");
+			setTimeout(function(){
+				$("#menu-fa-bars-circle").css("color","#ffbb00");
+			},100);
+			if($("#menu_container").css("width")=="0px"){
+				$("#menu_container").animate({width:"25%"});
+				$("#ng_container").animate({left: "30%"});
+				$("#menu_container").css("display","block");
+			}else{
+				$("#menu_container").animate({width:"0px"});
+				$("#ng_container").animate({left: "20%"});
+				$("#menu_container").css("display","none");
+			}	
+		}
+		else if($(window).width()>=400){
+			if($("#menu_container").css("width")=="0px"){
+				$("#menu_container").css("z-index","10");
+				$("#menu_container").animate({width:"30%"});
+				$("#menu_container").fadeIn();	
+			}else{
+				$("#menu_container").css("z-index","10");
+				$("#menu_container").animate({width:"0px"});
+				$("#menu_container").fadeOut();
+			}
+			
+		}
+		
+	});
+	
+	
+	function pop_up_card_reminder_setter(x){
+		if($("#dropdown-menu-for-"+x).is(":visible")){
+			$(".dropdown-menu").slideUp("fast");
+			return;
+		}
+		$(".dropdown-menu").slideUp("fast");
+		$("#dropdown-menu-for-"+x).slideDown("fast");
+		}
+		
+	$("#modal_reminder_container").on('click',function(){
+		if($("#drop_down_menu_modal").is(":visible")){
+			$("#drop_down_menu_modal").slideUp("fast");
+			return;
+		}
+	var y=$("#modal_reminder_display").html();
+	var date="";
+	var time="";
+	if(y!=""){
+		var x=new Date(y);
+		date=x.getMonth()+1+"/"+x.getDate()+"/"+(1900+x.getYear());
+		time=x.getHours()+":"+x.getMinutes();
+	}
+		
+	$("#modal_reminder_date").val(date);
+	$("#modal_reminder_time").val(time);
+	$("#drop_down_menu_modal").slideDown("fast");
+	});
+	$("#home_input_reminder_remover").on('click',function(){
+		global_reminder_update="";
+		$("#home_input_reminder").html("");
+		$(".dropdown-menu").slideUp("fast");
+		$("#home_input_reminder_row").css("display","none");
+		
+	});
+</script>
+<style type="text/css">  
+    #name_search,#name_search::-moz-placeholder,#modal_input_title,#modal_input_title::-moz-placeholder,#home_input_title,#home_input_title::-moz-placeholder {  
+      font-family:'Oswald';
+      font-weight:600;
+    }
+    #modal_input_text,#home_input_text,#home_input_text::-moz-placeholder,#modal_input_text::-moz-placeholder{
+    	font-family:'PT Sans';
+    	
+    } 
+    #modal_input_submit,#home_input_submit{
+    	font-family:'Lato';
+    	font-weight:300;
+    }
+   
+</style> 
